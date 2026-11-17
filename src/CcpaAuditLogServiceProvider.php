@@ -2,17 +2,17 @@
 
 namespace JeffersonGoncalves\Filament\CcpaAuditLog;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class CcpaAuditLogServiceProvider extends PackageServiceProvider
+class CcpaAuditLogServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-ccpa-audit-log';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-ccpa-audit-log')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->name(static::$name)
+            ->hasTranslations();
     }
 }
